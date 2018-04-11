@@ -1,0 +1,30 @@
+﻿{% extends "base.html" %}
+{% block content %}
+{% if user %}
+<h1>Hi, {{user.nickname}}!</h1>
+{% endif %}
+<!--发表框-->
+<form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+    昵称:{{ form.name(id='nickname', value='public') }} <br><br>
+    评论:<br>{{ form.comment(id='write', wrap="hard") }}
+    <p><input type="submit" value="发表"></p>
+</form>
+
+<!--搜索框-->
+<form action="" method="post" name="login">
+        <br>
+    {{ form.hidden_tag() }}
+    搜索昵称:{{ form.name(value='public') }}<input type="submit" value="搜索"></p>
+</form>
+
+{% for post in posts %}
+<div>
+	<div><p>{{post.name}}: </p><div>
+	<div><p><b><pre id="comments">{{post.comment}}</pre></b></p><div>
+        <div><p>{{post.time}}</p><div>
+</div>
+<hr>
+{% endfor %}
+
+{% endblock %}

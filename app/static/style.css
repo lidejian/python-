@@ -1,0 +1,16 @@
+/*#comments{color:black;}*/
+#comments{
+    color:black;
+    /* background-color:gray; */
+    margin: 10px;
+    font-size:200%;
+}
+
+#nickname{
+    width: 400px;
+}
+#write{
+	width: 400px;
+	height: 200px;
+	margin: -18px 42px;
+}
